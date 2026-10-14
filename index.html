@@ -1,47 +1,37 @@
 
-console.log("complete");
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mousemove event</title>
 
-// 현재 브라우저 창의 가로, 세로 크기 확인
-console.log($(window).width());
-console.log($(window).height());
+    <!-- 1. Reset CSS : 브라우저 기본 스타일 초기화 -->
+    <link rel="stylesheet" href="./style/reset.css" />
 
-// 변수에 값 할당
-let wWidth = $(window).width();
-let wHeight = $(window).height();
+    <!-- 2. Main CSS : 우리가 작성한 디자인 적용 -->
+    <link rel="stylesheet" href="./style/style.css" />
 
-// 변수에 할당된 값 확인
-console.log(wWidth);
-console.log(wHeight);
+    <!-- 3. jQuery Library : jQuery CDN 연결 -->
+    <script
+        src="https://code.jquery.com/jquery-4.0.0.min.js">
+    </script>
 
-
-// 고양이랑 풀숲 배경 조정해보기
-$(document).on("mousemove", function (event) {
-
-    // 마우스의 X, Y 좌표값 변수 할당
-    let mouseX = event.pageX;
-    let mouseY = event.pageY;
-
-
-    // 현재 마우스 좌표 표시
-    $("#status").html(mouseX + ", " + mouseY);
+    <!-- 4. My JavaScript : 우리가 작성한 스크립트 코드 연결 -->
+    <script src="./js/script.js" defer></script>
+</head>
 
 
-    // 1. 마우스 이동에 따라 배경 이미지의 위치 움직이게 하기
-    $(".bg-img").css(
-        "object-position",
-        `${mouseX / 10}% ${mouseY / 10}%`
-    );
+<body>
+     <div id="status">X: 0, Y: 0</div>
 
+    <img
+    class="bg-img"
+    src="./assests/bg.jpeg"
+    >
 
-    // 2. 마우스 커서에 고양이 이미지 따라다니게 하기
-
-    // 고양이 이미지의 가로세로 너비를 각각 변수에 할당함
-    let imgWidth = $(".cat-img").width();
-    let imgHeight = $(".cat-img").height();
-
-
-    // 고양이 이미지가 마우스 커서를 따라 이동
-    $(".cat-img").css("left", mouseX - imgWidth + "px");
-    $(".cat-img").css("top", mouseY - imgHeight + "px");
-
-});
+    <img
+    class="cat-img"
+    src="./assests/cat.png">
+</body>
+</html>
