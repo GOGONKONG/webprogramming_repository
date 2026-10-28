@@ -10,12 +10,12 @@ img { display: block; user-select: none; -webkit-user-drag: none; }
 .islands { z-index: 2; }
 .sea { z-index: 3; animation: sea 5s ease-in-out infinite alternate; }
 .land { z-index: 5; }
-/* 2. 시작: 파도와 캐릭터가 양옆으로 2.6초 열림 */
+/* 시작: 파도와 캐릭터가 양옆으로 2.6초 열림 */
 /* 양쪽 파도의 크기와 높이 */
 .wave-side {
   position: absolute;
   bottom: 10%;
-  width: 49%;
+  width: 50%;
   height: 95%;
   z-index: 4;
 }
